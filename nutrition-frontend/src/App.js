@@ -2,6 +2,12 @@ import React, {Component} from 'react';
 import './App.css';
 
 class  App extends Component{
+
+  componentDidMount(){
+    fetch('http://localhost:3000/api/meals')
+    .then(response => response.json())
+    .then(json => console.log(json))
+  }
   render () {
   return (
     <div className="App">

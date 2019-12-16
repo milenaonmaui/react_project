@@ -1,4 +1,4 @@
-class Api::MealsController < ApplicationController
+class MealsController < ApplicationController
     def index
         @meals = Meal.all
         render json: @meals
@@ -8,8 +8,6 @@ class Api::MealsController < ApplicationController
         @meal = Meal.new(meal_params)
         if @meal.save
             render json: @meal
-        else
-            render json: (error: 'Error creating meal')
         end
     end
 

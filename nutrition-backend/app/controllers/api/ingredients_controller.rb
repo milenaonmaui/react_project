@@ -1,4 +1,4 @@
-class Api::IngredientsController < ApplicationController
+class IngredientsController < ApplicationController
     def index
         @ingredients = Ingredient.all
         render json: @ingredients
