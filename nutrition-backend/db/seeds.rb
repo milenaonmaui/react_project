@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 ingredient_list = [
-    ["Egg", "1 large", 78, 1, 1, 0, 6],
-    ["Milk", "1 cup", 148, 12, 12, 0, 8],
-    ["Flour", "1 cup", 455, 95, 0, 3, 13],
-    ["Sugar", "1 cup", 773, 200, 200, 0, 0],
-    ["Butter", "1 tbs", 94, 3, 0, 1, 4]  
+    ["egg", "1 large", 78, 1, 1, 0, 6],
+    ["milk", "1 cup", 148, 12, 12, 0, 8],
+    ["flour", "1 cup", 455, 95, 0, 3, 13],
+    ["sugar", "1 cup", 773, 200, 200, 0, 0],
+    ["butter", "1 tbs", 94, 3, 0, 1, 4]  
   ]
 
   

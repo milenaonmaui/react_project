@@ -15,11 +15,12 @@ ActiveRecord::Schema.define(version: 2019_12_13_052258) do
   create_table "ingredients", force: :cascade do |t|
     t.string "name"
     t.string "measure"
-    t.integer "kcal"
-    t.integer "carbs"
-    t.integer "sugars"
-    t.integer "fiber"
-    t.integer "protein"
+    t.integer "kcal", default: 0
+    t.integer "fats", default: 0
+    t.integer "carbs", default: 0
+    t.integer "sugars", default: 0
+    t.integer "fiber", default: 0
+    t.integer "protein", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_12_13_052258) do
   create_table "meal_ingredients", force: :cascade do |t|
     t.integer "meal_id"
     t.integer "ingredient_id"
-    t.float "ingredient_amount"
+    t.float "ingredient_amount", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["ingredient_id"], name: "index_meal_ingredients_on_ingredient_id"
@@ -37,12 +38,13 @@ ActiveRecord::Schema.define(version: 2019_12_13_052258) do
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "kcal"
-    t.integer "carbs"
-    t.integer "sugars"
-    t.integer "fiber"
-    t.integer "protein"
-    t.float "servings"
+    t.integer "kcal", default: 0
+    t.integer "fats", default: 0
+    t.integer "carbs", default: 0
+    t.integer "sugars", default: 0
+    t.integer "fiber", default: 0
+    t.integer "protein", default: 0
+    t.float "servings", default: 1.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

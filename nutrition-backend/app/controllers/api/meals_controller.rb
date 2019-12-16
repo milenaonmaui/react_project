@@ -1,2 +1,32 @@
 class Api::MealsController < ApplicationController
+    def index
+        @meals = Meal.all
+        render json: @meals
+    end
+
+    def create
+        @meal = Meal.new(meal_params)
+        if @meal.save
+            render json: @meal
+        else
+            render json: (error: 'Error creating meal')
+        end
+    end
+
+    def show
+        #request to api/meals/id
+        @meal=Meal.find(params[:id])
+        render json: @meal
+    end
+
+    def destroy
+        @meal=Meal.find(params[:id])
+        @meal.destroy
+    end
+
+    private
+    def meal_params
+        params.require(meal).params(:name)
+    end
+
 end
