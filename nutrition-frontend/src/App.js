@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import './App.css';
+import {connect} from 'react-redux'
+import {fetchMeals} from './actions/fetchMeals' 
 
 class  App extends Component{
 
   componentDidMount(){
-    fetch('http://localhost:3000/api/meals')
-    .then(response => response.json())
-    .then(json => console.log(json))
+    
   }
   render () {
+    console.log(this.props)
   return (
     <div className="App">
         <a
@@ -25,4 +26,13 @@ class  App extends Component{
 }
 }
 
-export default App;
+//in this case we don't care to map state to props,
+//just want to fetch and update store
+
+//const mapStateToProps = ()  =>{
+//  return {
+//    meals: state.meals
+//  }
+
+//}
+export default connect(null, {fetchMeals})(App);
