@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import {fetchMeals} from './actions/fetchMeals' 
-
+import MealsContainer from './containers/MealsContainer.js'
 class  App extends Component{
 
   componentDidMount(){
@@ -20,7 +20,7 @@ class  App extends Component{
         >
           Learn React
         </a>
-      
+        <MealsContainer />
     </div>
   );
 }
