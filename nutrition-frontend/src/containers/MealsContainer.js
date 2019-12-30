@@ -13,7 +13,7 @@ class MealsContainer extends React.Component {
         console.log("Meals", this.props.meals)
         return (
             <div>
-              <MealInput />
+              <MealInput /><br/>
               <MealList meals={this.props.meals}/>
                 
             </div>
