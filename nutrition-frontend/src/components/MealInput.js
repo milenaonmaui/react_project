@@ -14,6 +14,10 @@ class MealInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addMeal(this.state)
+        this.setState({
+            name: "", 
+            description: ""
+        })
     }
 
     render(){

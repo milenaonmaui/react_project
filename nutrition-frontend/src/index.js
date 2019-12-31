@@ -6,13 +6,16 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
 import mealReducer from './reducers/mealReducer.js'
+import {BrowserRouter as Router} from 'react-router-dom'
+
 const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose
 const store = createStore(mealReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store ={store}>
-        <App />
-        
+        <Router>
+            <App />
+        </Router>
     </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
