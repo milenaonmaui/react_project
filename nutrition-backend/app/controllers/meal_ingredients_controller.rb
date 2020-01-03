@@ -8,16 +8,17 @@ class MealIngredientsController < ApplicationController
 
     def create
         @meal = Meal.find(params[:meal_id])
-        @ingredient = Ingredient.new(:name => params[:name], :measure => params[:measure], :kcal => params[:kcal])
+        @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal])
         if @ingredient.save
-           @meal.add_ingredient(@ingredient, params[:servings].to_i)
+           @meal.add_ingredient(@ingredient, params[:servings].to_f)
            if @meal.save
                 render json: @meal
            else
               render json: {error: "Error saving meal ingredient"}
            end
-           render json: {error: "Error saving ingredient"}
         else
+           render json: {error: "Error saving ingredient"}
+        end
 
     end
 
