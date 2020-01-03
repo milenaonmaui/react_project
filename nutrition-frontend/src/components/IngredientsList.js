@@ -4,7 +4,7 @@ const IngredientsList = (props) => {
     console.log("Ingredients list props: ", props)
     return (
         <div>
-            IngredientsList
+            {props.ingredients.map(ingredient => <li key={ingredient.id}>{ingredient.name} - {ingredient.measure}</li>)}
         </div>
     )
 

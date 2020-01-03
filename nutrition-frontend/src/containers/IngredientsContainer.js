@@ -6,12 +6,12 @@ class IngredientsContainer extends React.Component {
 
     render(){
         console.log("Ingredients container props:", this.props)
-        
+        let ingredients = this.props.meal ? this.props.meal.ingredients: []
 
         return (
             <div>
-                <IngredientsList ingredients={this.props.meal && this.props.meal.ingredients}/>
-                <IngredientInput />
+                <IngredientsList ingredients={ingredients}/>
+                <IngredientInput meal={this.props.meal}/>
             </div>
         )
     }

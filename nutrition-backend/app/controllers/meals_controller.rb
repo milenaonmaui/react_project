@@ -5,6 +5,7 @@ class MealsController < ApplicationController
     end
 
     def create
+        binding.pry
         @meal = Meal.new(meal_params)
         if @meal.save
             render json: @meal
@@ -24,7 +25,7 @@ class MealsController < ApplicationController
 
     private
     def meal_params
-        params.require(:meal).permit(:name)
+        params.require(:meal).permit(:name, :description)
     end
 
 end
