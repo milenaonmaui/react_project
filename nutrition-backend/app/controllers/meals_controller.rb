@@ -1,11 +1,12 @@
 class MealsController < ApplicationController
+    
+
     def index
         @meals = Meal.all
         render json: @meals
     end
 
     def create
-        binding.pry
         @meal = Meal.new(meal_params)
         if @meal.save
             render json: @meal
@@ -15,7 +16,11 @@ class MealsController < ApplicationController
     def show
         #request to api/meals/id
         @meal=Meal.find(params[:id])
-        render json: @meal
+        if @meal
+           render json: @meal
+        else
+            render json: {"error": "Meal not found"}
+        end
     end
 
     def destroy

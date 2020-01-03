@@ -9,7 +9,7 @@ class IngredientsController < ApplicationController
         if @ingredient.save
             render json: @ingredient
         else
-            render json: (error: 'Error creating ingredient')
+            render json: {error: 'Error creating ingredient'}
         end
     end
 
