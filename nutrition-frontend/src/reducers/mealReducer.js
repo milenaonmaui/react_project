@@ -14,7 +14,17 @@ export default function mealReducer(state = {meals: []}, action) {
                     return meal
                 }
             })
-            return {...state, meals:meals}
+            return {...state, meals: meals}
+        
+            case 'DELETE_INGREDIENT':
+            let meals2 = state.meals.map(meal => {
+                if (meal.id == action.payload.id){
+                    return action.payload
+                } else {
+                    return meal
+                }
+            })
+            return {...state, meals: meals2}
 
         default: 
             return state

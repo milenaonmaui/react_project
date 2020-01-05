@@ -10,7 +10,14 @@ export const addIngredient = (ingredient_data, mealId) => {
             body: JSON.stringify(ingredient_data)
         })
         .then(response => response.json())
-        .then(json => dispatch({type: 'ADD_INGREDIENT', payload: json}))
+        .then(json => {
+            if (json.error){
+                alert(json.error)
+            } else {
+                dispatch({type: 'ADD_INGREDIENT', payload: json})
+            }
+        
+        })
         
     }
 }

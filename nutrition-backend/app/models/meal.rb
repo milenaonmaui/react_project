@@ -13,4 +13,13 @@ class Meal < ApplicationRecord
         self.protein += ingredient.protein*servings
         self.save
     end
+
+    def delete_ingredient(ingredient, servings)
+        self.kcal -= ingredient.kcal*servings
+        self.carbs -= ingredient.carbs*servings
+        self.sugars -= ingredient.sugars*servings
+        self.fiber -=ingredient.fiber*servings
+        self.protein -= ingredient.protein*servings
+        self.save
+    end
 end
