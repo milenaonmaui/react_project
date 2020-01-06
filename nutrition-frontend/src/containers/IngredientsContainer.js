@@ -1,6 +1,7 @@
 import React from 'react'
 import IngredientsList from '../components/IngredientsList.js'
 import IngredientInput from '../components/IngredientInput.js'
+import IngredientSearch from '../components/IngredientSearch.js'
 
 class IngredientsContainer extends React.Component {
 
@@ -18,7 +19,9 @@ class IngredientsContainer extends React.Component {
         return (
             <div>
                 <IngredientsList ingredients={meal.ingredients} meal_id = {meal.id}/>
+                <IngredientSearch />
                 <IngredientInput meal={meal}/>
+                
             </div>
         )
     }

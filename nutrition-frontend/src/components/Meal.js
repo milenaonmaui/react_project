@@ -9,7 +9,6 @@ const Meal = (props) => {
     return (
         <div>
             <h2>
-                {meal ? null: <Redirect to='/meals' />}
                 {meal ? meal.name: null} - {meal ? meal.kcal: null}
             </h2>
             <IngredientsContainer meal={meal}/>

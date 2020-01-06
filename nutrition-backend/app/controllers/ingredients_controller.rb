@@ -1,6 +1,10 @@
 class IngredientsController < ApplicationController
     def index
-        @ingredients = Ingredient.all
+        if params[:q] 
+            @ingredients = Ingredient.where("name LIKE ?", params[:q])
+        else
+            @ingredients = Ingredient.all 
+        end
         render json: @ingredients
     end
 
