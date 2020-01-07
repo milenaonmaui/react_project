@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import IngredientsList from './IngredientsList.js'
 
 class IngredientSearch extends Component {
 
@@ -16,8 +17,7 @@ class IngredientSearch extends Component {
     fetch(`http://localhost:3001/api/ingredients?q=${query}`)
       .then(res => res.json())
       .then(data => {
-        this.setState({ ingredients: data})
-        console.log("Fetch ingredients state", this.state.ingredients)
+        this.setState({ ingredients: data});
       })
   }
 
@@ -29,6 +29,7 @@ class IngredientSearch extends Component {
           <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
           <button className='btn btn-primary' type="submit">Search</button>
         </form>
+        <IngredientsList ingredients={this.state.ingredients} meal_id={null}/>
       </div>
     )
   }

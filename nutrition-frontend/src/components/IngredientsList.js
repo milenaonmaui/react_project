@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteIngredient} from '../actions/deleteIngredient.js'
+import Ingredient from './Ingredient.js'
 
 const IngredientsList = (props) => {
 
@@ -12,7 +13,11 @@ const IngredientsList = (props) => {
     console.log("Ingredients list props: ", props)
     return (
         <div>
-            {props.ingredients.map(ingredient => <li key={ingredient.id}>{ingredient.name} - {ingredient.measure} <button onClick = {() => handleDelete(ingredient)}>Delete</button></li>)}
+            {props.ingredients.map(ingredient => <li key={ingredient.id} ><Ingredient ingredient={ingredient}/> 
+            
+            {props.meal_id?
+               <button onClick = {() => handleDelete(ingredient)}>Delete</button> : ""}
+            </li>)}
         </div>
     )
 
