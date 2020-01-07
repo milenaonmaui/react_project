@@ -7,6 +7,7 @@ import thunk from 'redux-thunk'
 import {Provider} from 'react-redux'
 import mealReducer from './reducers/mealReducer.js'
 import {BrowserRouter as Router} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose
 const store = createStore(mealReducer, composeEnhancers(applyMiddleware(thunk)))

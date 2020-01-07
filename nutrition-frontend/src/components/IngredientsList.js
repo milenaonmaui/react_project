@@ -16,8 +16,8 @@ const IngredientsList = (props) => {
             {props.ingredients.map(ingredient => <li key={ingredient.id} ><Ingredient ingredient={ingredient}/> 
             
             {props.meal_id?
-               <button onClick = {() => handleDelete(ingredient)}>Delete</button> : ""}
-            </li>)}
+               <button className='btn btn-primary' onClick = {() => handleDelete(ingredient)}>Delete</button> : ""}
+            <div id={"ingr-" + ingredient.id}></div> </li>)}
         </div>
     )
 
