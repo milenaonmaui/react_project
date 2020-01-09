@@ -1,7 +1,14 @@
 .App {
-  text-align: center;
+  text-align: left;
+  margin-left: 10px;
 }
 
+.Ingr-card {
+  background-color: aqua;
+  border-bottom: 1px;
+  border-right: 1px;
+  margin-left: 20px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

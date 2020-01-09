@@ -26,26 +26,36 @@ class IngredientInput extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="card" style={{width: '30rem', marginTop: '10px'}}>
+              <div className="card-body">
+                <h5 className="card-title">Create new ingredient:</h5>
                 <form onSubmit = {this.handleSubmit}>
-                    <label>Ingredient name:</label>
-                    <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/>
-                    <br/>
-                    <label>Calories:</label>
-                    <input type="text" name="kcal" value={this.state.kcal} onChange={this.handleChange}/>
-                    <label>Measure:</label>
-                    <select name="measure" value={this.state.measure} onChange={this.handleChange}>
-                        <option>1 cup</option>
-                        <option>1 tbs</option>
-                        <option>1 oz</option>
-                        <option>1 count</option>
-                    </select>
-                    <br/>
-                    <label>Servings:</label>
-                    <input type="text" name="servings" value={this.state.servings} onChange={this.handleChange}/>
-                    <br/>
+                  <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Name:</label>
+                        <input type="text" id ="name" name="name" value={this.state.name} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group">
+                        <label className="col-sm-4 col-form-label">Calories:</label>
+                        <input type="text" name="kcal" value={this.state.kcal} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group">
+                        <label className="col-sm-4 col-form-label">Measure:</label>
+                        <select name="measure" value={this.state.measure} onChange={this.handleChange}>
+                            <option>1 cup</option>
+                            <option>1 tbs</option>
+                            <option>1 oz</option>
+                            <option>1 count</option>
+                        </select>
+                    </div>
+                    <div className="form-group">
+                        <label className="col-sm-4 col-form-label">Servings:</label>
+                        <input type="text" name="servings" value={this.state.servings} onChange={this.handleChange}/>
+                    <div/>
                     <input type="submit" value="Save"/>
+                </div>
                 </form>
+                
+              </div>
             </div>
         )
     }
