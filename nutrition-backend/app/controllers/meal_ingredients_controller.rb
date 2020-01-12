@@ -7,8 +7,12 @@ class MealIngredientsController < ApplicationController
 
     def create
         @meal = Meal.find(params[:meal_id])
-        @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal])
-        @ingredient.save
+        if (params[:id]) {
+            @ingredient = Ingredient.find(params[:id])
+        } else {
+            @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal])
+            @ingredient.save
+        }        
         meal_ingr = MealIngredient.new(:meal_id => params[:meal_id], :ingredient_id => @ingredient.id, :ingredient_amount => params[:servings].to_f)
         
         if meal_ingr.save

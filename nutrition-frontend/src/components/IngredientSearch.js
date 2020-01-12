@@ -29,7 +29,7 @@ class IngredientSearch extends Component {
           <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
           <button className='btn btn-primary' type="submit">Search</button>
         </form>
-        <IngredientsList ingredients={this.state.ingredients} meal_id={null}/>
+        <IngredientsList ingredients={this.state.ingredients} meal_id={this.props.meal_id} action={"Add"}/>
       </div>
     )
   }

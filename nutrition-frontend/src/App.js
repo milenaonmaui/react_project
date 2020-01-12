@@ -2,25 +2,21 @@ import React, {Component} from 'react';
 import './App.css';
 import {connect} from 'react-redux'
 import MealsContainer from './containers/MealsContainer.js'
+import NavBar from './components/NavBar'
+
+
 class  App extends Component{
 
-  componentDidMount(){
-    
-  }
   render () {
     
   return (
-    <div className="App">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <MealsContainer />
-    </div>
+    <div>
+        <NavBar color="purple" title="NUTRITION CALCULATOR" />
+        <div className="container">
+          <MealsContainer />
+        </div>
+        
+  </div>
   );
 }
 }

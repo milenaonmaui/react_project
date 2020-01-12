@@ -10,9 +10,15 @@ const Ingredient = (props) => {
 
     const ingredientCard=(ingredient) =>{
         return (
-            <div class = "Ingr-card">
-                <p> Measure: {ingredient.measure}</p>
-                <p> Calories: {ingredient.kcal}</p>
+            <div className="card" style={{width: '18rem', marginTop: '10px', marginLeft: '10px'}}>
+              <div className="card-body">
+                <p className="card-text mb-0"> Measure: {ingredient.measure}</p>
+                <p className="card-text mb-0"> Calories: {ingredient.kcal}</p>
+                <p className="card-text mb-0"> Fats: {ingredient.fats}g</p>
+                <p className="card-text mb-0"> Fiber: {ingredient.fiber}g</p>
+                <p className="card-text mb-0"> Protein: {ingredient.protein}g</p> 
+                <p className="card-text mb-0"> Servings:<input type="text" id={"serv-" + ingredient.id} name="servings" defaultValue="1"/></p>
+              </div>
             </div>
         )
     }

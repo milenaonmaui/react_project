@@ -8,8 +8,7 @@ import {Route, Switch} from 'react-router-dom'
 
 class MealsContainer extends React.Component {
     componentDidMount(){
-        this.props.fetchMeals()
-        
+        this.props.fetchMeals()        
     }
 
     render(){

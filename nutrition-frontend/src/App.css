@@ -2,6 +2,12 @@
   text-align: left;
   margin-left: 10px;
 }
+.navbar-light {
+  background-color: #e3f2fd;
+}
+.nav-item {
+  margin-left: 15px;
+}
 
 .Ingr-card {
   background-color: aqua;
@@ -9,10 +15,7 @@
   border-right: 1px;
   margin-left: 20px;
 }
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

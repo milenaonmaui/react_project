@@ -18,8 +18,8 @@ class IngredientsContainer extends React.Component {
         //let meal = this.props.meal ? this.props.meal : {id: null}
         return (
             <div>
-                <IngredientsList ingredients={meal.ingredients} meal_id = {meal.id}/>
-                <IngredientSearch />
+                <IngredientsList ingredients={meal.ingredients} meal_id = {meal.id} action={"Delete"}/>
+                <IngredientSearch meal_id = {meal.id}/>
                 <IngredientInput meal={meal}/>
                 
             </div>
