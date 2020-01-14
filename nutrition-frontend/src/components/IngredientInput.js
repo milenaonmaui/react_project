@@ -22,15 +22,18 @@ class IngredientInput extends React.Component {
         })
     }
 
-
-
+    
     render(){
+        
+        let mealId= this.props.meal.id
+        
         return(
             <div className="card" style={{width: '30rem', marginTop: '10px'}}>
               <div className="card-body">
                 <h5 className="card-title">Create new ingredient:</h5>
                 <form onSubmit = {this.handleSubmit}>
-                  <div className="form-group-row">
+                
+                    <div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Name:</label>
                         <input type="text" id ="name" name="name" value={this.state.name} onChange={this.handleChange}/>
                    </div>
@@ -47,14 +50,16 @@ class IngredientInput extends React.Component {
                             <option>1 count</option>
                         </select>
                     </div>
-                    <div className="form-group">
+                    
+                    {mealId &&<div className="form-group">
                         <label className="col-sm-4 col-form-label">Servings:</label>
                         <input type="text" name="servings" value={this.state.servings} onChange={this.handleChange}/>
-                    <div/>
+                    </div>}
+                           
                     <input type="submit" value="Save"/>
-                </div>
+               
                 </form>
-                
+            
               </div>
             </div>
         )

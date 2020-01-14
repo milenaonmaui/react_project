@@ -7,12 +7,12 @@ class MealIngredientsController < ApplicationController
 
     def create
         @meal = Meal.find(params[:meal_id])
-        if (params[:id]) {
+        if (params[:id]) 
             @ingredient = Ingredient.find(params[:id])
-        } else {
+        else 
             @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal])
             @ingredient.save
-        }        
+        end        
         meal_ingr = MealIngredient.new(:meal_id => params[:meal_id], :ingredient_id => @ingredient.id, :ingredient_amount => params[:servings].to_f)
         
         if meal_ingr.save
@@ -28,13 +28,12 @@ class MealIngredientsController < ApplicationController
     end
 
     def show
-        #request to api/meals/id
-        @meal=Meal.find(params[:id])
+        @meal=Meal.find(params[:meal_id])
         render json: @meal
     end
 
     def destroy
-        
+        binding.pry
         @ingredient = Ingredient.find(params[:id])
         meal_ingr = MealIngredient.find_by(:meal_id => params[:meal_id], :ingredient_id => params[:id])
         if (meal_ingr) 

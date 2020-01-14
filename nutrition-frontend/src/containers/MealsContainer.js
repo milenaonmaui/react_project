@@ -4,7 +4,7 @@ import {fetchMeals} from '../actions/fetchMeals.js'
 import MealList from '../components/MealList.js'
 import Meal from '../components/Meal.js'
 import MealInput from '../components/MealInput.js'
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Link} from 'react-router-dom'
 
 class MealsContainer extends React.Component {
     componentDidMount(){
@@ -12,13 +12,14 @@ class MealsContainer extends React.Component {
     }
 
     render(){
-        console.log("Meals", this.props.meals)
+        console.log("Meals Props", this.props)
         return (
             <div>
+                <h2>Meals Container</h2>
                 <Switch>
                     <Route path='/meals/new' component = {MealInput}/>
                     <Route path='/meals/:id' render ={(routerProps) =><Meal {...routerProps} meals={this.props.meals}/>}/>
-                    <Route exact path='/meals' render ={() =><MealList meals={this.props.meals}/>}/>
+                    <Route exact path='/meals' render ={() =><MealList meals={this.props.meals}/>}/>  
                  </Switch>  
             </div>
         )

@@ -24,13 +24,21 @@ class IngredientsController < ApplicationController
     end
 
     def destroy
-        @ingredient=Ingredient.find(params[:id])
-        @ingredient.destroy
+        meals = MealIngredient.find_by(:ingredient_id => params[:id])
+        if !meals 
+            @ingredient=Ingredient.find(params[:id])
+            if !@ingredient.destroy
+                render json: {error: 'Error deleting ingredient'}
+             end
+        else
+            render json: {error: 'Cannot delete ingredient which is part of a meal.'}
+        end
+
     end
 
     private
     def ingredient_params
-        params.require(ingredient).params(:name)
+        params.require(:ingredient).permit(:name, :measure, :kcal)
     end
 
 end

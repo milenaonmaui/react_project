@@ -1,6 +1,13 @@
 export const addIngredient = (ingredient_data, mealId) => {
-    let url = `http://localhost:3001/api/meals/${mealId}/meal_ingredients`
-    console.log(url)
+
+    let url;
+
+    if (mealId) {
+        url = `http://localhost:3001/api/meals/${mealId}/meal_ingredients`
+    } else {
+        url = 'http://localhost:3001/api/ingredients/'
+    }
+        console.log(url)
     return (dispatch) => {
         fetch(url, {
             headers: {
@@ -14,7 +21,7 @@ export const addIngredient = (ingredient_data, mealId) => {
             if (json.error){
                 alert(json.error)
             } else {
-                dispatch({type: 'ADD_INGREDIENT', payload: json})
+                dispatch({type: 'CHANGE_INGREDIENT', payload: json})
             }
         
         })

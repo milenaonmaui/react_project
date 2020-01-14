@@ -3,19 +3,20 @@ import {NavLink} from 'react-router-dom'
 
 function NavBar(props){
   
+  const s = {color: "#6a49e3"}
   return (
     <nav className="navbar navbar-expand-lg navbar navbar-light" >
       
-          <a className="navbar-brand">
+          <a className="navbar-brand" href="/">
             { props.title }
           </a>
-          <NavLink className="nav-item" exact activeStyle={{color: "red"}} to="/">
+          <NavLink className="nav-item" activeStyle={s} exact to="/">
             HOME
           </NavLink>
-          <NavLink className="nav-item" exact activeStyle={{color: "red"}} to="/meals">
+          <NavLink className="nav-item" exact activeStyle={s} to="/meals">
             MEALS
           </NavLink>
-          <NavLink className="nav-item" exact activeStyle={{color: "red"}} to="/ingredients">
+          <NavLink className="nav-item" exact activeStyle={s} to="/ingredients">
             INGREDIENTS
           </NavLink>
         

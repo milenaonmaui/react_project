@@ -18,13 +18,14 @@ const IngredientsList = (props) => {
         }
         
     }
-
+    
     console.log("Ingredients list props: ", props)
     return (
         <div>
-            {props.ingredients.map(ingredient => <li key={ingredient.id} ><Ingredient ingredient={ingredient}/> 
+            {props.ingredients.map(ingredient => <li key={ingredient.id} ><Ingredient ingredient={ingredient} meal_id={props.meal_id}/> 
                
-            <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, props.action)}>{props.action=="Add"?"Add":"Delete"}</button>
+            {props.meal_id ? <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, props.action)}>{props.action=="Add"?"Add":"Delete"}</button>:
+            <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, "Delete")}>Delete</button>}
             <div id={"ingr-" + ingredient.id}></div> </li>)}
         </div>
     )

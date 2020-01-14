@@ -8,7 +8,9 @@
 .nav-item {
   margin-left: 15px;
 }
-
+.active-link {
+  color: #6a49e3;
+}
 .Ingr-card {
   background-color: aqua;
   border-bottom: 1px;
