@@ -28,12 +28,11 @@ class MealIngredientsController < ApplicationController
     end
 
     def show
-        @meal=Meal.find(params[:meal_id])
-        render json: @meal
+        @meal_ingredient=MealIngredient.find(params[:id])
+        render json: @meal_ingredient
     end
 
     def destroy
-        binding.pry
         @ingredient = Ingredient.find(params[:id])
         meal_ingr = MealIngredient.find_by(:meal_id => params[:meal_id], :ingredient_id => params[:id])
         if (meal_ingr) 
