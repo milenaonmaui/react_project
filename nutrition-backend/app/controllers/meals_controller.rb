@@ -14,7 +14,6 @@ class MealsController < ApplicationController
     end
 
     def show
-        #request to api/meals/id
         @meal=Meal.find(params[:id])
         if @meal
            render json: @meal
@@ -25,7 +24,13 @@ class MealsController < ApplicationController
 
     def destroy
         @meal=Meal.find(params[:id])
-        @meal.destroy
+        if @meal
+            @meal.destroy
+            render json: @meal.id
+         else
+             render json: {"error": "Error deleting: Meal not found"}
+         end
+        
     end
 
     private

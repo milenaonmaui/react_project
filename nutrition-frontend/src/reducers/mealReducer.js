@@ -1,5 +1,6 @@
 
 export default function mealReducer(state = {meals: []}, action) {
+    console.log("In reducer", action.type, action.payload)
     switch (action.type) {
         
         case 'FETCH_MEALS':   
@@ -16,7 +17,9 @@ export default function mealReducer(state = {meals: []}, action) {
                 }
             })
             return {...state, meals: meals}
-      
+        case 'DELETE_MEAL':
+        return {meals: state.meals.filter(meal => meal.id !== action.payload)}
+        
         default: 
             return state
     }

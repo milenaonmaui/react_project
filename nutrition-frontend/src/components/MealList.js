@@ -1,11 +1,15 @@
 import React from 'react'
 import {Route, Link} from 'react-router-dom'
 import Meal from './Meal.js'
+import {connect} from 'react-redux'
+import {deleteMeal} from '../actions/deleteMeal.js'
 
 const MealList = (props) => {
     const handleButtonClick = (meal) => {
         console.log("delete meal", meal.id)
+        props.deleteMeal(meal.id)
     }
+
     return (
         <div className="card" style={{width: '30rem', marginTop: '10px'}}>
               <div className="card-body">
@@ -22,4 +26,4 @@ const MealList = (props) => {
     )
 
 }
-export default MealList;
+export default connect(null, {deleteMeal})(MealList);
