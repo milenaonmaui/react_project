@@ -29,7 +29,9 @@ class IngredientsController < ApplicationController
             @ingredient=Ingredient.find(params[:id])
             if !@ingredient.destroy
                 render json: {error: 'Error deleting ingredient'}
-             end
+            else
+                render json: @ingredient.id
+            end
         else
             render json: {error: 'Cannot delete ingredient which is part of a meal.'}
         end

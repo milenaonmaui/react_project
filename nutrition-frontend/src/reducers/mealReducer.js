@@ -1,13 +1,16 @@
 
-export default function mealReducer(state = {meals: []}, action) {
+export default function mealReducer(state = {meals: [], ingredients: []}, action) {
     console.log("In reducer", action.type, action.payload)
     switch (action.type) {
         
         case 'FETCH_MEALS':   
-            return {meals: action.payload}
+            return {meals: action.payload, ingredients: [...state.ingredients]}
+
+        case 'FETCH_INGREDIENTS':
+            return {meals: state.meals, ingredients: action.payload}
 
         case 'ADD_MEAL':
-            return {...state, meals: [...state.meals, action.payload]}
+            return {...state, meals: [...state.meals, action.payload], ingredients: [...state.ingredients]}
         case 'CHANGE_INGREDIENT':
             let meals = state.meals.map(meal => {
                 if (meal.id === action.payload.id){
@@ -16,9 +19,12 @@ export default function mealReducer(state = {meals: []}, action) {
                     return meal
                 }
             })
-            return {...state, meals: meals}
+            return {...state, meals: meals, ingredients: [...state.ingredients]}
         case 'DELETE_MEAL':
-        return {meals: state.meals.filter(meal => meal.id !== action.payload)}
+            return {meals: state.meals.filter(meal => meal.id !== action.payload), ingredients: [...state.ingredients]}
+        
+        case 'DELETE_INGREDIENT':
+             return {meals: [...state.meals], ingredients: state.ingredients.filter(ingredient => ingredient.id !== action.payload)} 
         
         default: 
             return state

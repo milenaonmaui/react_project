@@ -18,7 +18,9 @@ export const deleteIngredient = (ingredientId, mealId) => {
             } else {
                 if (mealId) {
                    dispatch({type: 'CHANGE_INGREDIENT', payload: json})
-                } 
+                } else {
+                   dispatch({type: 'DELETE_INGREDIENT', payload: json})
+                }
             }
         
         })
