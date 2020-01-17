@@ -23,11 +23,11 @@ class IngredientSearch extends Component {
 
   render() {
     return (
-      <div>
+      <div className="m-2">
         <form onSubmit={this.handleSubmit}>
-        <label>Search Ingredients </label>
+        <h5>Search Ingredients </h5>
           <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
-          <button className='btn btn-primary' type="submit">Search</button>
+          <button className='btn btn-primary ml-1' type="submit">Search</button>
         </form>
         <IngredientsList ingredients={this.state.ingredients} meal_id={this.props.meal_id} action={"Add"}/>
       </div>

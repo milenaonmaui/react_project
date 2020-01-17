@@ -5,7 +5,6 @@ class Meal < ApplicationRecord
     validates  :name, presence: true
 
     def add_ingredient(ingredient, servings)
-        self.ingredients << ingredient
         self.kcal += ingredient.kcal*servings
         self.carbs += ingredient.carbs*servings
         self.sugars += ingredient.sugars*servings

@@ -17,11 +17,10 @@ class IngredientsContainer extends React.Component {
        
         return (
             <div>
-                <h5>Ingredients</h5>
+                <p><b> Ingredients</b></p>
                 <IngredientsList ingredients={meal.ingredients} meal_id = {meal.id} action={"Delete"}/>
                 <IngredientSearch meal_id = {meal.id}/>
-                <IngredientInput meal={meal}/>
-                
+                <IngredientInput meal={meal}/>                
             </div>
         )
     }

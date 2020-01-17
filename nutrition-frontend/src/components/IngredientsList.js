@@ -15,19 +15,28 @@ const IngredientsList = (props) => {
             document.getElementById("ingr-" + ingredient.id).style.display = "none"        
         } else {
             props.deleteIngredient(ingredient.id, props.meal_id)
+            document.getElementById("ingr-" + ingredient.id).style.display = "none"
         }
         
     }
     
     console.log("Ingredients list props: ", props)
+    
     return (
         <div>
-            {props.ingredients.map(ingredient => <li key={ingredient.id} ><Ingredient ingredient={ingredient} meal_id={props.meal_id}/> 
-               
-            {props.meal_id ? <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, props.action)}>{props.action=="Add"?"Add":"Delete"}</button>:
-            <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, "Delete")}>Delete</button>}
-            <div id={"ingr-" + ingredient.id}></div> </li>)}
-        </div>
+            {props.ingredients.length > 0 ? 
+            (<div className="card" style={{width: '30rem', marginTop: '10px', marginLeft: '10px'}}>
+                <div className="card-body">
+                    <ul className="list-group list-group-flush mb-0">
+                        {props.ingredients.map(ingredient => <li className="list-group-item" key={ingredient.id} ><Ingredient ingredient={ingredient} meal_id={props.meal_id}/> 
+                    
+                        {props.meal_id ? <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, props.action)}>{props.action=="Add"?"Add":"Delete"}</button>:
+                        <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, "Delete")}>Delete</button>}
+                        <div id={"ingr-" + ingredient.id}></div> </li>)}
+                    </ul>
+                </div>
+            </div>) : null}
+         </div>
     )
 
 }

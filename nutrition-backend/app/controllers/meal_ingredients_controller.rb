@@ -10,7 +10,7 @@ class MealIngredientsController < ApplicationController
         if (params[:id]) 
             @ingredient = Ingredient.find(params[:id])
         else 
-            @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal])
+            @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal], :fats => params[:fats], :protein => params[:protein], :fiber => params[:fiber], :carbs => params[:carbs])
             @ingredient.save
         end        
         meal_ingr = MealIngredient.new(:meal_id => params[:meal_id], :ingredient_id => @ingredient.id, :ingredient_amount => params[:servings].to_f)
@@ -32,7 +32,7 @@ class MealIngredientsController < ApplicationController
         render json: @meal_ingredient
     end
 
-    def destroy
+    def destroy       
         @ingredient = Ingredient.find(params[:id])
         meal_ingr = MealIngredient.find_by(:meal_id => params[:meal_id], :ingredient_id => params[:id])
         if (meal_ingr) 
@@ -50,7 +50,7 @@ class MealIngredientsController < ApplicationController
 
     private
     def ingredient_params
-        params.require(:meal_ingredient).permit(:servings)
+        params.require(:meal_ingredient).permit(:servings, )
     end
 
 end

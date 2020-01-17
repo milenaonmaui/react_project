@@ -18,6 +18,11 @@ class IngredientInput extends React.Component {
             name: "", 
             measure: "1 cup",
             kcal: "",
+            fats: "",
+            carbs: "",
+            sugars: "",
+            fiber: "",
+            protein: "",
             servings: ""
         })
     }
@@ -37,11 +42,31 @@ class IngredientInput extends React.Component {
                         <label className="col-sm-4 col-form-label">Name:</label>
                         <input type="text" id ="name" name="name" value={this.state.name} onChange={this.handleChange}/>
                    </div>
-                   <div className="form-group">
+                   <div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Calories:</label>
-                        <input type="text" name="kcal" value={this.state.kcal} onChange={this.handleChange}/>
+                        <input type="number" name="kcal" value={this.state.kcal} onChange={this.handleChange}/>
                    </div>
-                   <div className="form-group">
+                   <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Fats, g:</label>
+                        <input type="number" name="fats" value={this.state.fats} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Carbs, g:</label>
+                        <input type="number" name="carbs" value={this.state.carbs} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Sugars, g:</label>
+                        <input type="number" name="sugars" value={this.state.sugars} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Fiber, g:</label>
+                        <input type="number" name="fiber" value={this.state.fiber} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Protein, g:</label>
+                        <input type="number" name="protein" value={this.state.protein} onChange={this.handleChange}/>
+                   </div>
+                   <div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Measure:</label>
                         <select name="measure" value={this.state.measure} onChange={this.handleChange}>
                             <option>1 cup</option>
@@ -51,9 +76,9 @@ class IngredientInput extends React.Component {
                         </select>
                     </div>
                     
-                    {mealId &&<div className="form-group">
+                    {mealId &&<div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Servings:</label>
-                        <input type="text" name="servings" value={this.state.servings} onChange={this.handleChange}/>
+                        <input type="number" name="servings" value={this.state.servings} onChange={this.handleChange}/>
                     </div>}
                            
                     <input type="submit" value="Save"/>
