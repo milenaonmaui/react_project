@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom';
 
 
 const Meal = (props) => {  
-    
-    const meal = props.meals[props.match.params.id -1]
+    console.log("Meal props", props)
+    const meal = props.meals.filter(m => m.id == props.match.params.id)[0]
     // const meal = props.meal
-    const showMeal =() => {
+    /* const showMeal =() => {
         ReactDOM.render(mealCard(meal),document.getElementById("mealDiv"))
     }
 
@@ -16,28 +16,9 @@ const Meal = (props) => {
         return (
             <IngredientsContainer meal={meal}/>
         )
-    }
+    } */
     
-    const mealCard=() =>{
-        console.log("Inside Meal Card", meal)
-        return (
-            <div className="card" style={{width: '18rem', marginTop: '10px', marginLeft: '10px'}}>
-              <div className="card-body">
-                <p className="card-title"><b> {meal.name}</b></p>
-                <p className="card-text mb-0"> {meal.description}</p>
-                <p className="card-text mb-0"> Calories: {meal.kcal}</p>
-                <p className="card-text mb-0"> Fats: {meal.fats}g</p>
-                <p className="card-text mb-0"> Carbs: {meal.carbs}g</p>
-                <p className="card-text mb-0"> Sugars: {meal.sugars}g</p>
-                <p className="card-text mb-0"> Fiber: {meal.fiber}g</p>
-                <p className="card-text mb-0"> Protein: {meal.protein}g</p>                
-                
-                <p className="card-text mb-0"><a href={"/meals/"+meal.id+"/ingredients"}>Ingredients</a></p> 
-                
-              </div>
-            </div>
-        )
-    }
+    
     return (
         <div>
           <div className="row">

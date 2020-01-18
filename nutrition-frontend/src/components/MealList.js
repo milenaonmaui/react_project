@@ -6,7 +6,6 @@ import {deleteMeal} from '../actions/deleteMeal.js'
 
 const MealList = (props) => {
     const handleButtonClick = (meal) => {
-        console.log("delete meal", meal.id)
         props.deleteMeal(meal.id)
     }
 

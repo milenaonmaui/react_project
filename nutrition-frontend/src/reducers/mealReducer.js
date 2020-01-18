@@ -10,7 +10,7 @@ export default function mealReducer(state = {meals: [], ingredients: []}, action
             return {meals: state.meals, ingredients: action.payload}
 
         case 'ADD_MEAL':
-            return {...state, meals: [...state.meals, action.payload], ingredients: [...state.ingredients]}
+            return {meals: [...state.meals, action.payload], ingredients: [...state.ingredients]}
         case 'CHANGE_INGREDIENT':
             let meals = state.meals.map(meal => {
                 if (meal.id === action.payload.id){

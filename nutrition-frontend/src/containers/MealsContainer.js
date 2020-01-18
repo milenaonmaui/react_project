@@ -16,9 +16,9 @@ class MealsContainer extends React.Component {
         return (
             <div>
                 <Switch>
-                    <Route path='/meals/new' component = {MealInput}/>
-                    <Route path='/meals/:id' render ={(routerProps) =><Meal {...routerProps} meals={this.props.meals}/>}/>
                     <Route exact path='/meals' render ={() =><MealList meals={this.props.meals}/>}/>  
+                    <Route path='/meals/:id' render ={(routerProps) =><Meal {...routerProps} meals={this.props.meals}/>}/>
+                    <Route path='/meals/new' component = {MealInput}/>                                       
                  </Switch>  
             </div>
         )

@@ -30,7 +30,7 @@ const IngredientsList = (props) => {
                     <ul className="list-group list-group-flush mb-0">
                         {props.ingredients.map(ingredient => <li className="list-group-item" key={ingredient.id} ><Ingredient ingredient={ingredient} meal_id={props.meal_id}/> 
                     
-                        {props.meal_id ? <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, props.action)}>{props.action=="Add"?"Add":"Delete"}</button>:
+                        {props.meal_id ? <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, props.action)}>{props.action==="Add"?"Add":"Delete"}</button>:
                         <button className='btn btn-outline-primary btn-sm' onClick = {() => handleButtonClick(ingredient, "Delete")}>Delete</button>}
                         <div id={"ingr-" + ingredient.id}></div> </li>)}
                     </ul>
