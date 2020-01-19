@@ -26,8 +26,8 @@ const Meal = (props) => {
                 {meal ?                 
                     (<div className="card" style={{width: '18rem', marginTop: '10px', marginLeft: '10px'}}>
                         <div className="card-body">
-                            <p className="card-title"><b> {meal.name}</b></p>
-                            <p className="card-text mb-0"> {meal.description}</p>
+                            <p className="card-title mb-0"><b> {meal.name}</b></p>
+                            <p className="card-subtitle mb-2"> {meal.description}</p>
                             <p className="card-text mb-0"> Calories: {meal.kcal}</p>
                             <p className="card-text mb-0"> Fats: {meal.fats}g</p>
                             <p className="card-text mb-0"> Carbs: {meal.carbs}g</p>

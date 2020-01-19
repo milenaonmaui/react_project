@@ -7,6 +7,7 @@ class Meal < ApplicationRecord
     def add_ingredient(ingredient, servings)
         self.kcal += ingredient.kcal*servings
         self.carbs += ingredient.carbs*servings
+        self.fats += ingredients.fats*servings
         self.sugars += ingredient.sugars*servings
         self.fiber +=ingredient.fiber*servings
         self.protein += ingredient.protein*servings
@@ -16,6 +17,7 @@ class Meal < ApplicationRecord
     def delete_ingredient(ingredient, servings)
         self.kcal -= ingredient.kcal*servings
         self.carbs -= ingredient.carbs*servings
+        self.fats -= ingredients.fats*servings
         self.sugars -= ingredient.sugars*servings
         self.fiber -=ingredient.fiber*servings
         self.protein -= ingredient.protein*servings

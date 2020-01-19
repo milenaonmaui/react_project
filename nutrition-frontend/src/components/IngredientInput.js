@@ -17,13 +17,13 @@ class IngredientInput extends React.Component {
         this.setState({
             name: "", 
             measure: "1 cup",
-            kcal: "",
-            fats: "",
-            carbs: "",
-            sugars: "",
-            fiber: "",
-            protein: "",
-            servings: ""
+            kcal: "0",
+            fats: "0",
+            carbs: "0",
+            sugars: "0",
+            fiber: "0",
+            protein: "0",
+            servings: "1"
         })
     }
 
@@ -40,7 +40,7 @@ class IngredientInput extends React.Component {
                 
                     <div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Name:</label>
-                        <input type="text" id ="name" name="name" value={this.state.name} onChange={this.handleChange}/>
+                        <input type="text" id ="name" name="name" required value={this.state.name} onChange={this.handleChange}/>
                    </div>
                    <div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Calories:</label>
@@ -78,7 +78,7 @@ class IngredientInput extends React.Component {
                     
                     {mealId &&<div className="form-group-row">
                         <label className="col-sm-4 col-form-label">Servings:</label>
-                        <input type="number" name="servings" value={this.state.servings} onChange={this.handleChange}/>
+                        <input type="number" name="servings" value={this.state.servings} step = ".01" onChange={this.handleChange}/>
                     </div>}
                            
                     <input type="submit" value="Save"/>

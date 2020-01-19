@@ -24,7 +24,27 @@ class MealInput extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className="card" style={{width: '30rem', marginTop: '10px'}}>
+              <div className="card-body">
+                <h5 className="card-title">Create a new meal:</h5>
+                <form onSubmit = {this.handleSubmit}>
+                
+                    <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Name:</label>
+                        <input type="text" id ="name" name="name" required value={this.state.name} onChange={this.handleChange}/>
+                   </div>
+
+                   <div className="form-group-row">
+                        <label className="col-sm-4 col-form-label">Description:</label>
+                        <input type="text" id ="name" name="description" value={this.state.description} onChange={this.handleChange}/>
+                   </div>
+                   <input type="submit" value="Save"/>
+               
+                </form>
+            
+              </div>
+            </div>
+           /*  <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>Meal Name:</label>
                     <input type="text" placeholder = "Name" name="name" onChange = {this.handleChange} value = {this.state.name}/><br/>
@@ -32,7 +52,7 @@ class MealInput extends React.Component {
                     <input type="text" placeholder = "Description" name="description" onChange = {this.handleChange} value = {this.state.description} />
                     <input type="submit"/>
                 </form>
-            </div>
+            </div> */
         )
     }
 }
