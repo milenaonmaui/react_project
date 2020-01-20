@@ -3,6 +3,7 @@ import './App.css';
 import {connect} from 'react-redux'
 import MealsContainer from './containers/MealsContainer.js'
 import IngredientsContainer from './containers/IngredientsContainer.js'
+import HomeContainer from './containers/HomeContainer.js'
 import NavBar from './components/NavBar'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -15,7 +16,7 @@ class  App extends Component{
        <Router>
         <div>
           <NavBar title="NUTRITION CALCULATOR"/>
-          <Route exact path="/" render={() => <div>Home</div>} />
+          <Route exact path="/"> <HomeContainer/> </Route>
           <Route path='/meals' render={routerProps => <MealsContainer {...routerProps}/>} />
           <Route path='/ingredients' render={routerProps => <IngredientsContainer {...routerProps}/>} />
          
