@@ -5,8 +5,8 @@ function NavBar(props){
   
   const s = {color: "#6a49e3"}
   return (
-    <nav className="navbar navbar-expand-lg navbar navbar-light" >
-      
+    <nav className="navbar navbar-expand-lg navbar-dark" >
+        
           <a className="navbar-brand" href="/">
             { props.title }
           </a>
@@ -19,6 +19,7 @@ function NavBar(props){
           <NavLink className="nav-item" exact activeStyle={s} to="/ingredients">
             INGREDIENTS
           </NavLink>
+       
         
     </nav>
   )

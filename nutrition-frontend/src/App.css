@@ -2,14 +2,15 @@
   text-align: left;
   margin-left: 10px;
 }
-.navbar-light {
-  background-color: #e3f2fd;
+.navbar-dark {
+  background-color: #161748;
 }
 .nav-item {
   margin-left: 15px;
+  color: white
 }
 .active-link {
-  color: #6a49e3;
+  color: #39a0ca;
 }
 .Ingr-card {
   background-color: aqua;
