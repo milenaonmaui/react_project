@@ -24,11 +24,17 @@ class IngredientsContainer extends React.Component {
         }
        
         return (
-            <div>
-                <p><b> Ingredients</b></p>
-                <IngredientsList ingredients={ingredients} meal_id = {meal.id} action={"Delete"}/>
-                <IngredientSearch meal_id = {meal.id}/>
-                <IngredientInput meal={meal}/>                
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-6">
+                    <h5>Search Ingredients </h5>
+                    <IngredientsList ingredients={ingredients} meal_id = {meal.id} action={"Delete"}/>
+                </div>
+                <div className="col-sm-6">
+                    <IngredientSearch meal_id = {meal.id}/>
+                    <IngredientInput meal={meal}/> 
+                </div>
+              </div>               
             </div>
         )
     }
