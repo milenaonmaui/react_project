@@ -25,7 +25,7 @@ const IngredientsList = (props) => {
     return (
         <div>
             {props.ingredients.length > 0 ? 
-            (<div className="card" style={{width: '30rem', marginTop: '10px', marginLeft: '10px'}}>
+            (<div className="card" style={{width: '20rem', marginTop: '2px', marginLeft: '2px'}}>
                 <div className="card-body">
                     <ul className="list-group list-group-flush mb-0">
                         {props.ingredients.map(ingredient => <li className="list-group-item" key={ingredient.id} ><Ingredient ingredient={ingredient} meal_id={props.meal_id}/> 

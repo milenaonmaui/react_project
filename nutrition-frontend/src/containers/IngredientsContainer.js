@@ -25,11 +25,11 @@ class IngredientsContainer extends React.Component {
         return (
             <div className="container">
               <div className="row">
-                <div className="col-sm-6">
+                <div className="col-sm">
                     <h5>Ingredients </h5>
                     <IngredientsList ingredients={ingredients} meal_id = {meal.id} action={"Delete"}/>
                 </div>
-                <div className="col-sm-6">
+                <div className="col-sm">
                     <IngredientSearch meal_id = {meal.id}/>
                     <IngredientInput meal={meal}/> 
                 </div>

@@ -8,11 +8,11 @@ const Meal = (props) => {
     const meal = props.meals.filter(m => m.id == props.match.params.id)[0]
       
     return (
-        <div>
+        <div className="container">
           <div className="row">
-            <div className = "col-6" >  
+            <div className = "col-sm-3" >  
                 {meal ?                 
-                    (<div className="card" style={{width: '18rem', marginTop: '10px', marginLeft: '10px'}}>
+                    (<div className="card" style={{width: '15rem', marginTop: '10px'}}>
                         <div className="card-body">
                             <p className="card-title mb-0"><b> {meal.name}</b></p>
                             <p className="card-subtitle mb-2"> {meal.description}</p>
@@ -25,7 +25,7 @@ const Meal = (props) => {
                         </div>
                     </div>): null}
             </div>
-            <div className = "col-6">
+            <div className = "col-sm-9">
                 <IngredientsContainer meal={meal}/>
             </div>
          </div>

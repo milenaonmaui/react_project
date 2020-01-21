@@ -24,7 +24,7 @@ class MealInput extends React.Component {
 
     render(){
         return(
-            <div className="card" style={{width: '30rem', marginTop: '10px'}}>
+            <div className="card w-50">
               <div className="card-body">
                 <h5 className="card-title">Create a new meal:</h5>
                 <form onSubmit = {this.handleSubmit}>

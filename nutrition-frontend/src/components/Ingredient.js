@@ -20,7 +20,7 @@ const Ingredient = (props) => {
     
     const ingredientCard=(ingredient) =>{
         return (
-            <div className="card" style={{width: '18rem', marginTop: '10px', marginLeft: '10px'}}>
+            <div className="card" style={{width: '15rem', marginTop: '2px', marginLeft: '2px'}}>
               <div className="card-body">
                 <p className="card-title"><b> {ingredient.name}</b></p>
                 <p className="card-text mb-0"> Measure: {ingredient.measure}</p>
