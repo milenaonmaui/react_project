@@ -5,7 +5,16 @@ const Ingredient = (props) => {
     const showIngredient =() => {
         let divId = "ingr-" + props.ingredient.id
         let ingrDiv = document.getElementById(divId)
-        ReactDOM.render(ingredientCard(props.ingredient),document.getElementById(divId))
+        if (ingrDiv.innerHTML === "")
+            ReactDOM.render(ingredientCard(props.ingredient),document.getElementById(divId))
+    
+        else {
+            if (ingrDiv.style.display === "none") {
+                ingrDiv.style.display = "block";
+              } else {
+                ingrDiv.style.display = "none";
+            } 
+        }
     }
   
     
@@ -30,7 +39,7 @@ const Ingredient = (props) => {
     
     return (
         <React.Fragment>
-            <button className="btn btn-link" onClick={showIngredient}>
+            <button className="btn btn-link"  onClick={showIngredient}>
                 {props.ingredient.name} 
            </button>     
         </React.Fragment>
