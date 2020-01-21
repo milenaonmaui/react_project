@@ -1,15 +1,15 @@
 class IngredientsController < ApplicationController
     def index
         if params[:q] 
-            @ingredients = Ingredient.where("name LIKE ?", params[:q])
+            @ingredients = Ingredient.where("name LIKE ?", params[:q].downcase)
         else
-            @ingredients = Ingredient.all 
+            @ingredients = Ingredient.all.order('name ASC') 
         end
         render json: @ingredients
     end
 
     def create
-        @ingredient = Ingredient.new(ingredient_params)
+        @ingredient = Ingredient.new(:name => params[:name].downcase, :measure => params[:measure], :kcal => params[:kcal], :fats => params[:fats], :protein => params[:protein], :fiber => params[:fiber], :carbs => params[:carbs])
         if @ingredient.save
             render json: @ingredient
         else
@@ -18,7 +18,6 @@ class IngredientsController < ApplicationController
     end
 
     def show
-        #request to api/meals/id
         @ingredient=Ingredient.find(params[:id])
         render json: @ingredient
     end

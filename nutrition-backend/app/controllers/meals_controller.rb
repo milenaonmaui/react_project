@@ -2,7 +2,7 @@ class MealsController < ApplicationController
     
 
     def index
-        @meals = Meal.all
+        @meals = Meal.all.order('name ASC')
         render json: @meals
     end
 
