@@ -4,21 +4,9 @@ import ReactDOM from 'react-dom';
 
 
 const Meal = (props) => {  
-    console.log("Meal props", props)
+    
     const meal = props.meals.filter(m => m.id == props.match.params.id)[0]
-    // const meal = props.meal
-    /* const showMeal =() => {
-        ReactDOM.render(mealCard(meal),document.getElementById("mealDiv"))
-    }
-
-    const showIngredients = () => {
-        console.log("Inside showIngredients", meal)
-        return (
-            <IngredientsContainer meal={meal}/>
-        )
-    } */
-    
-    
+      
     return (
         <div>
           <div className="row">
@@ -43,18 +31,6 @@ const Meal = (props) => {
          </div>
         </div>
     )
-   /*  return (
-        <React.Fragment>
-            <button className="btn btn-link" onClick={showMeal}>
-                {props.meal.name} 
-           </button>     
-        </React.Fragment>
-    ) */
-    /* return (
-        <div>
-            {mealCard(meal)}
-            <IngredientsContainer meal={meal}/>
-        </div>
-    ) */
+ 
 }
 export default Meal;

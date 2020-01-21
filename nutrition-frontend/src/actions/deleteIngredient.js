@@ -6,7 +6,7 @@ export const deleteIngredient = (ingredientId, mealId) => {
     } else {
        url = `http://localhost:3001/api/ingredients/${ingredientId}` 
     }
-    console.log(url)
+
     return (dispatch) => {
         fetch(url, {           
             method: 'DELETE',

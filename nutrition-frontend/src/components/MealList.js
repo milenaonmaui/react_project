@@ -17,7 +17,6 @@ const MealList = (props) => {
                 <ul>
                     {props.meals.map((meal, id) => <li className="card-body" key={meal.id}><Link to = {`/meals/${meal.id}`}>{meal.name}</Link>
                     <button className='btn btn-outline-primary btn-sm ml-2' onClick = {() => handleButtonClick(meal)}>Delete</button>
-                    {/* <div id={"meal-" + meal.id}></div>  */}
                     </li>)}
                 </ul>
             </div>

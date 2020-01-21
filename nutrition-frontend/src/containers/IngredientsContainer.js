@@ -11,7 +11,6 @@ class IngredientsContainer extends React.Component {
     }
 
     render(){
-        console.log("Ingredients container props:", this.props)
         let meal = this.props.meal;
         let ingredients;
         if (meal === undefined) {
@@ -27,7 +26,7 @@ class IngredientsContainer extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-sm-6">
-                    <h5>Search Ingredients </h5>
+                    <h5>Ingredients </h5>
                     <IngredientsList ingredients={ingredients} meal_id = {meal.id} action={"Delete"}/>
                 </div>
                 <div className="col-sm-6">

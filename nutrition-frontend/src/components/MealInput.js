@@ -44,15 +44,7 @@ class MealInput extends React.Component {
             
               </div>
             </div>
-           /*  <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Meal Name:</label>
-                    <input type="text" placeholder = "Name" name="name" onChange = {this.handleChange} value = {this.state.name}/><br/>
-                    <label>Description:</label>
-                    <input type="text" placeholder = "Description" name="description" onChange = {this.handleChange} value = {this.state.description} />
-                    <input type="submit"/>
-                </form>
-            </div> */
+          
         )
     }
 }

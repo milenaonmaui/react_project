@@ -7,7 +7,7 @@ export const addIngredient = (ingredient_data, mealId) => {
     } else {
         url = 'http://localhost:3001/api/ingredients/'
     }
-        console.log(url)
+
     return (dispatch) => {
         fetch(url, {
             headers: {

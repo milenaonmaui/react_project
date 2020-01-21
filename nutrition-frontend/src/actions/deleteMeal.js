@@ -2,7 +2,7 @@ export const deleteMeal = (mealId) => {
 
     let   url = `http://localhost:3001/api/meals/${mealId}`
   
-    console.log(url)
+  
     return (dispatch) => {
         fetch(url, {           
             method: 'DELETE',
