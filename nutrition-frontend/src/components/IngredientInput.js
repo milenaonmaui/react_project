@@ -33,9 +33,9 @@ class IngredientInput extends React.Component {
         let mealId= this.props.meal.id
         
         return(
-            <div className="card" style={{width: '30rem', marginTop: '10px'}}>
+            <div className="card" >
               <div className="card-body">
-                <h5 className="card-title">Create new ingredient:</h5>
+                <p className="card-title"><b>Create new ingredient:</b></p>
                 <form onSubmit = {this.handleSubmit}>
                 
                     <div className="form-group-row">

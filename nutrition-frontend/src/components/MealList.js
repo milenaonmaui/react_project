@@ -10,7 +10,7 @@ const MealList = (props) => {
     }
 
     return (
-        <div className="card" style={{width: '30rem', marginTop: '10px'}}>
+        <div className="card w-75" >
               <div className="card-body">
                 <h5 className="card-title">Meals</h5>
                 <div><Link to="/meals/new">Add a meal</Link></div>

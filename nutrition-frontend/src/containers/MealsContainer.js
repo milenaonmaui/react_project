@@ -12,9 +12,9 @@ class MealsContainer extends React.Component {
     }
 
     render(){
-        console.log("Meals Props", this.props)
+    
         return (
-            <div>
+            <div class = "container">
                 <Switch>
                     <Route exact path='/meals/new' component = {MealInput}/>                                       
                     <Route exact path='/meals' render ={() =><MealList meals={this.props.meals}/>}/>  

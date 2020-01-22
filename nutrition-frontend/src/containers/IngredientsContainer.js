@@ -25,8 +25,8 @@ class IngredientsContainer extends React.Component {
         return (
             <div className="container">
               <div className="row">
-                <div className="col-sm">
-                    <h5>Ingredients </h5>
+                <div className="col-sm-5">
+                   <p><b>Ingredients </b></p>
                     <IngredientsList ingredients={ingredients} meal_id = {meal.id} action={"Delete"}/>
                 </div>
                 <div className="col-sm">

@@ -23,9 +23,9 @@ class IngredientSearch extends Component {
 
   render() {
     return (
-      <div className="m-2">
+      <div className="mb-5" >
         <form onSubmit={this.handleSubmit}>
-        <h5>Search Ingredients </h5>
+        <p><b>Search Ingredients </b></p>
           <input type="text" value={this.state.query} onChange={event => this.setState({query: event.target.value})} />
           <button className='btn btn-primary ml-1' type="submit">Search</button>
         </form>
