@@ -1,6 +1,6 @@
 
 export default function mealReducer(state = {meals: [], ingredients: []}, action) {
-    console.log("In reducer", action.type, action.payload)
+    
     switch (action.type) {
         
         case 'FETCH_MEALS':   

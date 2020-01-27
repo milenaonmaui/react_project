@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import {connect} from 'react-redux'
 import MealsContainer from './containers/MealsContainer.js'
 import IngredientsContainer from './containers/IngredientsContainer.js'
 import HomeContainer from './containers/HomeContainer.js'
 import NavBar from './components/NavBar'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 class  App extends Component{
 
@@ -28,13 +27,5 @@ class  App extends Component{
 }
 }
 
-//in this case we don't care to map state to props,
-//just want to fetch and update store
 
-//const mapStateToProps = ()  =>{
-//  return {
-//    meals: state.meals
-//  }
-
-//}
 export default App;

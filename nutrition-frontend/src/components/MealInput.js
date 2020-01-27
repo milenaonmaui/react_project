@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {addMeal} from '../actions/addMeal.js'
-import {Redirect} from 'react-router-dom';
+
 
 class MealInput extends React.Component {
     state = {name: "", description: ""}

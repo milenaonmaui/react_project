@@ -1,11 +1,10 @@
 import React from 'react'
 import IngredientsContainer from '../containers/IngredientsContainer.js'
-import ReactDOM from 'react-dom';
 
 
 const Meal = (props) => {  
     
-    const meal = props.meals.filter(m => m.id == props.match.params.id)[0]
+    const meal = props.meals.filter(m => m.id.toString() === props.match.params.id)[0]
       
     return (
         <div className="container">

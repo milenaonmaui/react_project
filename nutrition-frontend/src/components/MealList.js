@@ -1,6 +1,5 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
-import Meal from './Meal.js'
+import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {deleteMeal} from '../actions/deleteMeal.js'
 

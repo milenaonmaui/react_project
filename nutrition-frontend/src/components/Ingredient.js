@@ -19,6 +19,9 @@ const Ingredient = (props) => {
   
     
     const ingredientCard=(ingredient) =>{
+        console.log("Ingredeint Card: Meal Id:", props.meal_id, ingredient.ingredient_amount)
+        let readonly = null;
+        if (props.meal_id && ingredient.ingredient_amount) readonly = "readOnly"
         return (
             <div className="card" style={{width: '15rem', marginTop: '2px', marginLeft: '2px'}}>
               <div className="card-body">
@@ -30,7 +33,7 @@ const Ingredient = (props) => {
                 <p className="card-text mb-0"> Sugars: {ingredient.sugars}g</p>
                 <p className="card-text mb-0"> Fiber: {ingredient.fiber}g</p>
                 <p className="card-text mb-0"> Protein: {ingredient.protein}g</p> 
-                {props.meal_id && <p className="card-text mb-0"> Servings:<input type="text" style={{width: '3rem'}} id={"serv-" + ingredient.id} name="servings" defaultValue="1" value = {ingredient.ingredient_amount}/></p>}
+                {props.meal_id && <p className="card-text mb-0"> Servings:<input type="text" style={{width: '4rem'}} id={"serv-" + ingredient.id} name="servings" value = {ingredient.ingredient_amount}/></p>}
 
               </div>
             </div>

@@ -20,7 +20,6 @@ const IngredientsList = (props) => {
         
     }
     
-    console.log("Ingredients list props: ", props)
     
     return (
         <div>
